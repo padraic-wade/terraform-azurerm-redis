@@ -11,8 +11,14 @@ variable "name" {
 variable "sku_name" {
   description = "Redis Cache Sku name. Can be Basic, Standard or Premium"
   type = string
-  default = Standard
+  default = "Standard"
 }
+
+variable "redis_family" {
+  description = "Redis family: values are C (for Basic/Standard SKU family) and P (for Premium)"
+  type = string
+}
+
 
 variable "tls_version" {
   description = "Minimum TLS version mandated by security"

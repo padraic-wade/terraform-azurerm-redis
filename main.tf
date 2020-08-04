@@ -1,9 +1,3 @@
-locals {
-  redis_family_map = {
-    Basic    = "C",
-    Premium  = "P"
-  }
-}
 
 resource "azurerm_resource_group" "redis_group" {
   location = var.location
@@ -12,7 +6,7 @@ resource "azurerm_resource_group" "redis_group" {
 
 resource "azurerm_redis_cache" "redis_cache" {
   capacity = 0
-  family = lookup(local.redis_family_map)
+  family = var.redis_family_map
   location = var.location
   name = "${var.name}-redis"
   resource_group_name = azurerm_resource_group.redis_group
