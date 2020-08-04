@@ -3,7 +3,7 @@ variable "location" {
   type = string
 }
 
-variable "name" {
+variable "redis_name" {
   description = "Prefix for name"
   type = string
 }
@@ -19,4 +19,9 @@ variable "tls_version" {
   description = "Minimum TLS version mandated by security"
   type = number
   default = 1.2
+}
+
+variable "app_name" {
+  description = "The name of the application redis is supporting"
+  type = string
 }
